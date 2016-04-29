@@ -6,7 +6,7 @@ NodeJS v6.0.0
 
 # Update
 If you already have NodeJS installed on your system but it is on another version,
-update your NodeJS to lastest stable version following instructions below:
+update your NodeJS to latest stable version following instructions below:
 
 #### Run the following commands on your terminal (needs super user permission)
 ```
@@ -23,7 +23,7 @@ To run the elevator application execute the command below on your terminal:
 
 #### Arguments
 If you want, it is possible to pass arguments to override the elevator
-application default configurations. The accepted arguments are the bellow:
+application default configurations. The accepted arguments are listed bellow:
 
 `node elevator-runner.js {$buildingMaxFloor} {$elevatorMaxAmount} {$callsAmount}`
 
