@@ -30,54 +30,35 @@ module.exports = class Elevator {
 
     console.log('###  Fluxo de trânsito do elevador  ###')
     while (this.state === 'start') {
-
       let allocated = this.buildingInstance.allocated
 
-      while (this.currentDirection === 'up') {
-        this.loggerInstance.logFloor(
-          this.floor,
-          this.buildingInstance.maxFloor + 1,
-          this.maxAmount,
-          this.currentAmount
-        )
+      this.loggerInstance.logFloor(
+        this.floor,
+        this.buildingInstance.maxFloor + 1,
+        this.maxAmount,
+        this.currentAmount
+      )
 
-        this.boarding('up', allocated)
-        this.landing()
+      this.boarding(this.currentDirection, allocated)
+      this.landing()
 
-        let allValues = this.getAllCallsValues(this.historyCalls)
-        let max = this.getMaxFloor(allValues)
-        if (this.floor === max) {
-          if (this.calls.length > 0)
-            this.currentDirection = 'down'
-          else
-            this.stop()
-        }
+      let allValues = this.getAllCallsValues(this.historyCalls)
+      let max = this.getMaxFloor(allValues)
+      let min = this.getMinFloor(allValues)
+      if (this.currentDirection === 'up')
+        if (this.floor === max)
+          this.calls.length > 0
+            ? this.currentDirection = 'down'
+            : this.stop()
         else
           this.floor++
-      }
-
-      while (this.currentDirection === 'down') {
-        this.loggerInstance.logFloor(
-          this.floor,
-          this.buildingInstance.maxFloor + 1,
-          this.maxAmount,
-          this.currentAmount
-        )
-
-        this.boarding('down', allocated)
-        this.landing()
-
-        let allValues = this.getAllCallsValues(this.historyCalls)
-        let min = this.getMinFloor(allValues)
-        if (this.floor === min) {
-          if (this.calls.length > 0)
-            this.currentDirection = 'up'
-          else
-            this.stop()
-        }
+      else
+        if (this.floor === min)
+          this.calls.length > 0
+            ? this.currentDirection = 'up'
+            : this.stop()
         else
           this.floor--
-      }
     }
     console.log('\n\n###  Histórico de chamadas do elevador  ###')
     console.log(historyCalls)
