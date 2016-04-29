@@ -39,3 +39,6 @@ You can run the tests of the classes individually or all at once
 
 #### At once
 `node elevator-specs-runner.js`
+
+# Thank's
+All of 00k (:
