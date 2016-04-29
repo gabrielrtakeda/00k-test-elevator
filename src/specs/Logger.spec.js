@@ -1,6 +1,6 @@
 'use strict'
-const Tester = require('./Tester')
-const Logger = require('./Logger')
+const Tester = require('./../classes/Tester')
+const Logger = require('./../classes/Logger')
 
 const tester = new Tester()
 const logger = new Logger()

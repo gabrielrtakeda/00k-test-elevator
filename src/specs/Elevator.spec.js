@@ -1,9 +1,9 @@
 'use strict'
-const Tester    = require('./Tester')
-const Building  = require('./Building')
-const Calls     = require('./Calls')
-const Logger    = require('./Logger')
-const Elevator  = require('./Elevator')
+const Tester    = require('./../classes/Tester')
+const Building  = require('./../classes/Building')
+const Calls     = require('./../classes/Calls')
+const Logger    = require('./../classes/Logger')
+const Elevator  = require('./../classes/Elevator')
 
 const tester    = new Tester()
 const building  = new Building()

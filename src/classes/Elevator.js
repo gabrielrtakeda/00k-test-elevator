@@ -137,6 +137,10 @@ module.exports = class Elevator {
     this.calls = calls
   }
 
+  setMaxAmount(maxAmount) {
+    this.maxAmount = maxAmount
+  }
+
   getAllCallsValues(historyCalls) {
     return []
       .concat(historyCalls.map(call => call.floor))

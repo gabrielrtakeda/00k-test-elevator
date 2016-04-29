@@ -1,6 +1,6 @@
 'use strict'
-const Tester    = require('./Tester')
-const Building  = require('./Building')
+const Tester    = require('./../classes/Tester')
+const Building  = require('./../classes/Building')
 
 const tester    = new Tester()
 const building  = new Building()
