@@ -1,3 +1,4 @@
+'use strict'
 module.exports = class Logger {
   logAmmountStatus(maxAmmount, currentAmmount) {
     let lugares = maxAmmount - currentAmmount.length
